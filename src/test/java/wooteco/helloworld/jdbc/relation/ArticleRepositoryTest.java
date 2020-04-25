@@ -22,7 +22,8 @@ public class ArticleRepositoryTest {
     @DisplayName("게시글 생성 후 댓글 추가")
     @Test
     void addComment() {
-        Article article = new Article("title", "content");
+        Author author = authorRepository.save(new Author("브라운"));
+        Article article = new Article("title", "content", author);
         article.addComments(new Comment("댓글1"));
         Article oneCommentArticle = articleRepository.save(article);
 
@@ -38,7 +39,8 @@ public class ArticleRepositoryTest {
     @DisplayName("게시글/댓글 생성 후 댓글 제거")
     @Test
     void removeComment() {
-        Article article = new Article("title", "content");
+        Author author = authorRepository.save(new Author("브라운"));
+        Article article = new Article("title", "content", author);
         article.addComments(new Comment("댓글1"));
         article.addComments(new Comment("댓글2"));
         Article persistArticle = articleRepository.save(article);
@@ -56,7 +58,8 @@ public class ArticleRepositoryTest {
     @DisplayName("게시글/댓글 생성 후 게시글 제거")
     @Test
     void removeArticleWithComments() {
-        Article article = new Article("title", "content");
+        Author author = authorRepository.save(new Author("브라운"));
+        Article article = new Article("title", "content", author);
         article.addComments(new Comment("댓글1"));
         article.addComments(new Comment("댓글2"));
         Article persistArticle = articleRepository.save(article);

@@ -3,6 +3,7 @@ package wooteco.helloworld.jdbc.relation;
 import org.springframework.data.annotation.Id;
 
 public class Author {
+    @Id
     private Long id;
     private String name;
 
