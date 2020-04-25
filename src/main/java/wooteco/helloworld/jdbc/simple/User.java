@@ -1,4 +1,4 @@
-package wooteco.helloworld.jdbc;
+package wooteco.helloworld.jdbc.simple;
 
 import org.springframework.data.annotation.Id;
 

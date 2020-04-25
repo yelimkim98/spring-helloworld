@@ -1,4 +1,4 @@
-package wooteco.helloworld.jdbc;
+package wooteco.helloworld.jdbc.simple;
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -11,7 +11,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     List<User> findAll();
 
     /**
-     * select count(1) from user where name = :name
+     * select count(1) from user where name = name
      */
     int countByName(String name);
 }
